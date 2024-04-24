@@ -24,8 +24,8 @@ from setuptools import setup, find_packages
 from compiler.api import compiler as api_compiler
 from compiler.errors import compiler as errors_compiler
 
-with open("requirements.txt", encoding="utf-8") as r:
-    requires = [i.strip() for i in r]
+with open("requirements.txt", encoding="utf-8", mode="r") as r:
+    requires = r.readlines()
 
 with open("pyrogram/__init__.py", encoding="utf-8") as f:
     version = re.findall(r"__version__ = \"(.+)\"", f.read())[0]
@@ -45,7 +45,7 @@ setup(
     long_description_content_type="text/markdown",
     url="https://github.com/pyrogram",
     download_url="https://github.com/pyrogram/pyrogram/releases/latest",
-    author="Dan",
+    author="Mel(testing)",
     author_email="dan@pyrogram.org",
     license="LGPLv3",
     classifiers=[
